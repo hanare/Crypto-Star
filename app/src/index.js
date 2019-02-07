@@ -1,6 +1,7 @@
 import Web3 from "web3";
 
 import starNotaryArtifact from "../../build/contracts/StarNotary.json";
+import { throws } from "assert";
 
 
 const App = {
@@ -37,6 +38,7 @@ const App = {
     const { createStar } = this.meta.methods;
     const name = document.getElementById("starName").value;
     const id = document.getElementById("starId").value;
+    console.log(name,id);
     await createStar(name, id).send({ from: this.account });
     App.setStatus("New Star Owner is " + this.account + ".");
   },
@@ -49,6 +51,13 @@ const App = {
     let starName = await lookUptokenIdToStarInfo(id).call();//.send({from: this.account});
     console.log(starName + " ");
     App.setStatus("Star name " + starName + ".");
+  },
+  exchangeStar: async function(){
+    const { exchangeStars } = this.meta.methods;
+    const id1 =  document.getElementById("token1").value;
+    const id2 = document.getElementById("token2").value;
+    await exchangeStars(id1,id2).send({from: this.account});
+    App.setStatus("Successfully exchanaged ");
   }
 
 };
