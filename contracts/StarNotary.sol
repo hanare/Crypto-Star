@@ -73,10 +73,11 @@ contract StarNotary is ERC721 {
         
          address owner1 =  ownerOf(_tokenId1);
          address owner2 =  ownerOf(_tokenId2);
-        if(msg.sender == owner1){
+        require(msg.sender == owner1 || msg.sender == owner2 && owner1!=owner2, "Ownership issue" );
+        if(msg.sender == owner1 && msg.sender!=owner2){
             _transferFrom(owner1, owner2, _tokenId1);
             _transferFrom(owner2, owner1, _tokenId2);
-        }else{
+        }else if(msg.sender == owner2 && msg.sender!=owner1){
             _transferFrom(owner2, owner1, _tokenId1);
             _transferFrom(owner1, owner2, _tokenId2);
             
