@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>StarNotary DAPP</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+
+</head>
+<style>
+  input {
+      display: block;
+      margin-bottom: 12px;
+    }
+  </style>
+
+<body>
+  <h1 class='jumbotron'>Cryto Star</h1>
+  <div class="container">
+    <ul class="nav  nav-pills nav-justified">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#CreateStar">Create Star</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#lookUp">LookUp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#exchangeStar">ExchangeStar</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="tab-content">
+      <div class="tab-pane container active" id="CreateStar">
+
+        <br>
+
+        <div class="input-group">
+          <div class="form-group mb-2">
+
+            <input type="text" class="form-control" id="starName" placeholder="Star Name">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+
+            <input type="text" class="form-control" id="starId" placeholder="Star Id (1,2...)">
+          </div>
+          <span class="input-group-btn">
+            <button id="createStar" onclick="App.createStar()" class="btn btn-primary mb-2">Create</button>
+          </span>
+        </div>
+
+
+
+      </div>
+      <div class="tab-pane container fade" id="lookUp">
+        <br>
+        <div class="input-group">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" id="lookid">
+          </div>
+          <span class="input-group-btn">
+
+            <button id="createStar" onclick="App.lookUp()" class="btn btn-primary mb-2">Look Up a Star</button>
+          </span>
+        </div>
+
+      </div>
+      <div class="tab-pane container fade" id="exchangeStar">
+        <br>
+        <div class="input-group mb-3">
+
+          <div class="form-group mb-2">
+
+            <input type="text" class="form-control" id="token1" placeholder="Token 1">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+
+            <input type="text" class="form-control" id="token2" placeholder="Token 2">
+          </div>
+          <span class="input-group-btn">
+            <button id="createStar" onclick="App.exchangeStar()" class="btn btn-primary mb-2">Create</button>
+          </span>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- <br>
+  <h1>Create a Star</h1>
+  <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
+  <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
+  <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
+  <br>
+  <hr>
+  <br>
+  <h1>Look up a Star</h1>
+  <br><label for="name">Star ID:</label><input type="text" id="lookid"></input>
+  <br><br><button onclick="App.lookUp()">Look Up a Star</button>
+  <hr>
+  <br>
+  <span id="status"></span>
+  <br> -->
+  <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
